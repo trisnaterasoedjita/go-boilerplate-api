@@ -7,8 +7,8 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/labstack/gommon/log"
-	"github.com/metallurgical/go-echo-boilerplate/database"
-	"github.com/metallurgical/go-echo-boilerplate/routes"
+	"go-boilerplate-api/database"
+	"go-boilerplate-api/routes"
 	_ "net/http"
 )
 

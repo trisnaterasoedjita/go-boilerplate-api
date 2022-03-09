@@ -2,8 +2,9 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	"golang.org/x/crypto/bcrypt"
+	"crypto/sha1"
 	"time"
+	"encoding/hex"
 )
 
 type User struct {
@@ -19,12 +20,13 @@ type User struct {
 // Checking whether user exist or not in database with
 // provided email and password
 func (u *User) IsUserExistByEmailPassword(email, password string) bool {
-	var user User
-
-	if !u.IsUserExistByEmail(email) {
-		return false
-	}
-	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password)); err != nil {
+	var count = 0
+	sha := sha1.New()
+	sha.Write([]byte(password))
+	var encrypt = sha.Sum(nil)
+	passwordEnc := hex.EncodeToString(encrypt)
+	u.Db.Where("username = ? AND password = ? ", email,passwordEnc).First(u).Count(&count)
+	if count == 0 {
 		return false
 	}
 	return true
@@ -39,3 +41,5 @@ func (u *User) IsUserExistByEmail(email string) bool {
 	}
 	return true
 }
+
+

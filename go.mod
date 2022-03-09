@@ -1,4 +1,4 @@
-module github.com/trisnaterasoedjita/go-boilerplate-api
+module go-boilerplate-api
 
 go 1.17
 
@@ -8,7 +8,6 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.2.8
-	github.com/metallurgical/go-echo-boilerplate v0.0.0-20190523091016-8a233d12262c
 	golang.org/x/crypto v0.0.0-20190513172903-22d7a77e9e5f
 )
 

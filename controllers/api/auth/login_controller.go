@@ -3,8 +3,8 @@ package auth
 import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
-	"github.com/trisnaterasoedjita/go-boilerplate-api/database"
-	"github.com/trisnaterasoedjita/go-boilerplate-api/models"
+	"go-boilerplate-api/database"
+	"go-boilerplate-api/models"
 	"net/http"
 	"time"
 )

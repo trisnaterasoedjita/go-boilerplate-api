@@ -20,7 +20,7 @@ LABEL author="Trisna Tera (trisnalenovo@gmail.com)"
 RUN apk add --no-cache tzdata
 #rsyslog supervisor
 RUN mkdir -p /usr/app/src
-COPY --from=builder /usr/app/materi-golang-api /usr/app/materi-golang-api
+COPY --from=builder /usr/app/go-builerplate-api /usr/app/go-builerplate-api
 COPY --from=builder /usr/app/.env /usr/app/.env
 
 RUN cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -28,4 +28,4 @@ WORKDIR /usr/app
 
 EXPOSE 4002
 
-CMD ["./go-builerplate-task"]
+CMD ["./go-builerplate-api"]

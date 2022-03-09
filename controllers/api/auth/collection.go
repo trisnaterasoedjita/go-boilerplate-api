@@ -2,7 +2,7 @@ package auth
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/trisnaterasoedjita/go-boilerplate-api/models"
+	"go-boilerplate-api/models"
 )
 
 var (

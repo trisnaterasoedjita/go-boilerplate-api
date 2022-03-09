@@ -4,15 +4,17 @@ import (
 	_ "fmt"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	AuthController "github.com/trisnaterasoedjita/go-boilerplate-api/controllers/api/auth"
-	UserController "github.com/trisnaterasoedjita/go-boilerplate-api/controllers/api/users"
-	"github.com/trisnaterasoedjita/go-boilerplate-api/database"
+	AuthController "go-boilerplate-api/controllers/api/auth"
+	UserController "go-boilerplate-api/controllers/api/users"
+	TaskController "go-boilerplate-api/controllers/api/tasks"
+	"go-boilerplate-api/database"
 )
 
 type (
 	Routes struct {
 		Auth  string
 		Users string
+		Tasks string
 	}
 )
 
@@ -20,6 +22,7 @@ func registerRoutes() Routes {
 	return Routes{
 		Auth:  "/auth",
 		Users: "/users",
+		Tasks: "/tasks",
 	}
 }
 
@@ -43,6 +46,8 @@ func DefineApiRoute(e *echo.Echo, connection database.DatabaseProvider) {
 		// /users/*
 		user := v1.Group(routes.Users)
 		user.GET("", UserController.Index).Name = "users.index"
+		task := v1.Group(routes.Tasks)
+		task.GET("", TaskController.Index).Name = "tasks.index"
 	}()
 }
 

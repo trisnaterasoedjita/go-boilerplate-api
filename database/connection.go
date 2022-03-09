@@ -3,7 +3,7 @@ package database
 import (
 	"fmt"
 	"github.com/jinzhu/gorm"
-	"github.com/trisnaterasoedjita/go-boilerplate-api/config"
+	"go-boilerplate-api/config"
 	"log"
 )
 
