@@ -4,9 +4,9 @@ import (
 	_ "fmt"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	AuthController "github.com/metallurgical/go-echo-boilerplate/controllers/api/auth"
-	UserController "github.com/metallurgical/go-echo-boilerplate/controllers/api/users"
-	"github.com/metallurgical/go-echo-boilerplate/database"
+	AuthController "github.com/trisnaterasoedjita/go-boilerplate-api/controllers/api/auth"
+	UserController "github.com/trisnaterasoedjita/go-boilerplate-api/controllers/api/users"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/database"
 )
 
 type (

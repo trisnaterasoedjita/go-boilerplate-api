@@ -3,8 +3,8 @@ package auth
 import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
-	"github.com/metallurgical/go-echo-boilerplate/database"
-	"github.com/metallurgical/go-echo-boilerplate/models"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/database"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/models"
 	"net/http"
 	"time"
 )
@@ -15,7 +15,7 @@ func Login(connection database.DatabaseProvider) func(ctx echo.Context) error {
 		var (
 			email, password string
 		)
-
+		
 		email = c.FormValue("email")
 		password = c.FormValue("password")
 

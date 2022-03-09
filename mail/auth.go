@@ -2,7 +2,7 @@ package mail
 
 import (
 	"fmt"
-	"github.com/metallurgical/go-echo-boilerplate/config"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/config"
 	"net/smtp"
 )
 

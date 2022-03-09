@@ -2,9 +2,9 @@ package auth
 
 import (
 	"github.com/labstack/echo"
-	"github.com/metallurgical/go-echo-boilerplate/database"
-	"github.com/metallurgical/go-echo-boilerplate/mail"
-	"github.com/metallurgical/go-echo-boilerplate/models"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/database"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/mail"
+	"github.com/trisnaterasoedjita/go-boilerplate-api/models"
 	"net/http"
 )
 

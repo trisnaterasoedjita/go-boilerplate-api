@@ -7,12 +7,12 @@ import (
 )
 
 type User struct {
-	ID        uint   `gorm:"primary_key"`
-	Email     string `gorm:"type:varchar(100);unique_index"`
-	Name      string
+	ID        uint   `gorm:"column=id"`
+	Username     string `gorm:"column=username"`
+	Name      string `gorm:"column=name"`
 	Password  string `gorm:"-"` // ignore this field
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	CreatedAt time.Time `gorm:"column=created_at"`
+	UpdatedAt time.Time `gorm:"column=updated_at"`
 	Db        *gorm.DB
 }
 
@@ -33,7 +33,7 @@ func (u *User) IsUserExistByEmailPassword(email, password string) bool {
 // Checking whether user exist with email
 func (u *User) IsUserExistByEmail(email string) bool {
 	var count = 0
-	u.Db.Where("email = ?", email).First(u).Count(&count)
+	u.Db.Where("username = ?", email).First(u).Count(&count)
 	if count == 0 {
 		return false
 	}
