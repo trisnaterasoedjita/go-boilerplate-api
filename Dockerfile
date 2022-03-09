@@ -8,7 +8,7 @@ ENV BUILD_PACKAGES="git curl"
 
 RUN apk add --no-cache $BUILD_PACKAGES \
       && go mod download \
-      && CGO_ENABLED=0 GOOS=linux go build -ldflags '-w -s' -a -o egaransi-backend .
+      && CGO_ENABLED=0 GOOS=linux go build -ldflags '-w -s' -a -o go-builerplate-api .
 
 ##### stage 2
 
